@@ -13,8 +13,14 @@ const App = () => {
     setProducts(data);
   }
 
-  const fetchCart = async () => {   // getting card & setting state
+  const fetchCart = async () => {   // getting cart & setting state
     setCart(await commerce.cart.retrieve())
+  }
+
+  const handleAddtoCart = async (productID, quantity) => {    // function that adds product to cart, takes 2 params
+    const item = await commerce.cart.add(productID, quantity);  // use params to pass to API 
+  
+    setCart(item.cart);   // add items to cart
   }
 
   useEffect(() => {
@@ -27,7 +33,7 @@ const App = () => {
   return (
     <div>
         <Navbar />
-        <Products products={products}/>
+        <Products products={products} onAddtoCart={handleAddtoCart}/>
     </div>
   )
 }

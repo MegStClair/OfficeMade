@@ -8,7 +8,7 @@ import useStyles from './styles'; // hook
 
 // Layout of each product (product card)
 // since product is a subcomponent of Products.jsx, we can call product from there (passes on props)
-const Product = ({ product }) => {
+const Product = ({ product, onAddtoCart }) => {
     const classes = useStyles(); // complete hook 
 
     return (
@@ -26,7 +26,7 @@ const Product = ({ product }) => {
                 <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary"/>
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>
-                <IconButton aria-label="Add to Cart">
+                <IconButton aria-label="Add to Cart" onClick={() => onAddtoCart(product.id, 1)}> 
                     <AddShoppingCart />
                 </IconButton>
             </CardActions>
