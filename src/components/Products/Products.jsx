@@ -4,14 +4,9 @@ import { Grid } from '@material-ui/core';
 import Product from './Product/Product';
 import useStyles from './styles';
 
-// products array containing list of diff products (name & description)
-const products = [
-    { id: 1, name: 'Shoes', description: 'Running Shoes', price: '$5', image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/49e5514bb83e4c5d8bf5ad9100ef2815_9366/Ultraboost_22_Running_Shoes_White_GX5459_01_standard.jpg' },
-    { id: 2, name: 'MacBook', description: 'Apple MacBook', price: '$10', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1664472289661' },
-];
 
 // Create Products component
-const Products = () => {
+const Products = ({ products }) => {
     const classes = useStyles();
 
     return (
