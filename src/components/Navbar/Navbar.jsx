@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
 import { CallMissedSharp, ShoppingCart } from '@material-ui/icons';
 
-import logo from '../../assets/commerce-icon.png';
+import logo from '../../assets/office-logo.png';
 import useStyles from './styles';
 
 
@@ -15,7 +15,7 @@ const Navbar = ({ totalItems }) => {
             <Toolbar>
                 <Typography variant="h6" className={classes.title} color="inherit">
                     <img src={logo} alt="SHOP NAME" height="25px" className={classes.image}/>
-                    Office Made
+                    OfficeMade
                 </Typography>
                 <div className={classes.grow} />
                 <div className={classes.button}>
