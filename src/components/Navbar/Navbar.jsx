@@ -6,7 +6,7 @@ import logo from '../../assets/commerce-icon.png';
 import useStyles from './styles';
 
 
-const Navbar = ({ totalItems}) => {
+const Navbar = ({ totalItems }) => {
     const classes = useStyles(); 
     
   return (
@@ -15,7 +15,7 @@ const Navbar = ({ totalItems}) => {
             <Toolbar>
                 <Typography variant="h6" className={classes.title} color="inherit">
                     <img src={logo} alt="SHOP NAME" height="25px" className={classes.image}/>
-                    SHOP NAME
+                    Office Made
                 </Typography>
                 <div className={classes.grow} />
                 <div className={classes.button}>
