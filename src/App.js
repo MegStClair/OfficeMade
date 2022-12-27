@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './library/Commerce';
 
-import { Products, Navbar, Cart } from './components';
+import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PrintDisabled } from '@material-ui/icons';
 
@@ -71,6 +71,7 @@ const App = () => {
               handleRemoveFromCart={handleRemoveFromCart}
               handleEmptyCart={handleEmptyCart}
           />}/>
+          <Route exact path="/checkout" element={<Checkout/>}/>
         </Routes>
     </div>
     </Router>
