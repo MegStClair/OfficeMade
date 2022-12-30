@@ -6,11 +6,7 @@ const FormInput = ({ name, label, required }) => {
   const { control } = useFormContext();
 
   return (
-      <Controller 
-        control={control}
-        name={name}
-        render={({field}) => <TextField fullWidth label={label} required />}
-      />
+      <Controller control={control} name={name} render={({field}) => <TextField fullWidth label={label} required />}/>
   );
 }
 
