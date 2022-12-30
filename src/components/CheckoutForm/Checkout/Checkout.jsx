@@ -4,10 +4,10 @@ import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider,
 import useStyles from './styles';
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
-import Confirmation from '../Confirmation';
+import Confirmation from '../Review';
 import { commerce } from '../../../library/Commerce';
 
-const steps = ['Shipping Address', 'Payment Details', 'Confirmation']
+const steps = ['Shipping Address', 'Payment Details']
 
 const Checkout = ({ cart }) => {
     // traverse thrue steps using usestate
@@ -48,9 +48,10 @@ const Checkout = ({ cart }) => {
         <div> Confirmation </div>
     );
 
+     //pass data to forms by step
     const Form = () => activeStep === 0
         ? <AddressForm checkoutToken next={next}/>
-        : <PaymentForm shippingData={shippingData}/> 
+        : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken}/> 
         
     
   return (
@@ -59,7 +60,7 @@ const Checkout = ({ cart }) => {
     <main className={classes.layout}>
         <Paper className={classes.paper}>
             <Typography variant="h4" align="center">Checkout</Typography>
-            <Stepper activeStep={0} className={classes.stepper}>
+            <Stepper activeStep={activeStep} className={classes.stepper}>
                 {steps.map((step) => (
                     <Step key={step}>
                         <StepLabel>{step}</StepLabel>
