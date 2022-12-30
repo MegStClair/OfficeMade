@@ -4,7 +4,7 @@ import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider,
 import useStyles from './styles';
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
-import Confirmation from '../Review';
+import Review from '../Review';
 import { commerce } from '../../../library/Commerce';
 
 const steps = ['Shipping Address', 'Payment Details']
@@ -44,7 +44,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     }
 
 
-    const Confirmation = () => (
+    const Review = () => (
         <div> Confirmation </div>
     );
 
@@ -67,7 +67,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
                     </Step>
                 ))}
             </Stepper>
-            {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form />}
+            {activeStep === steps.length ? <Review /> : checkoutToken && <Form />}
         </Paper>
     </main>
     </>

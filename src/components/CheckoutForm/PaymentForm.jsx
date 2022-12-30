@@ -15,10 +15,10 @@ const PaymentForm = ({ checkoutToken, shippingData, backStep, onCaptureCheckout,
     if(!stripe || !elements) return;
 
     // get element by passing in cardElement
-    const CardElement = elements.getElement(CardElement);
+    const cardElement = elements.getElement(CardElement);
 
     //use Stripe API to create payment method
-    const { error, paymentMethod} = await stripe.createPaymentMethod({ type:'card', card:CardElement})
+    const { error, paymentMethod} = await stripe.createPaymentMethod({ type:'card', card: cardElement})
 
     //handle error, if none- create object containing all data (products, customer, address, shipping, payment info, etc)
     if(error) {

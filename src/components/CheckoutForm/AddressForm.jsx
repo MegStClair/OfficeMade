@@ -98,6 +98,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                             ))}
                         </Select>
                     </Grid>
+                    <Grid item xs={12} sm={6}><FormInput name='email' label='Email'/></Grid>
                 </Grid> 
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
