@@ -3,11 +3,13 @@ import { commerce } from './library/Commerce';
 
 import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { PrintDisabled } from '@material-ui/icons';
+
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({}); 
+  const [order, setOrder] = useState({}); 
+  const [errorMessage, setErrorMessage] = useState('');
 
   // getting products
   const fetchProducts = async () => {
@@ -50,6 +52,26 @@ const App = () => {
     setCart(item);
   }
 
+  // after checkout is complete, empty cart
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.empty();
+
+    setCart(newCart);
+  } 
+
+  // function to call Commerce API for fulfilling an order, then refresh cart
+  const handleCaptureCheckout = async (checkoutTokenID, newOrder) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(checkoutTokenID, newOrder)
+
+      setOrder(incomingOrder);
+      refreshCart();
+
+    } catch(error) {
+      setErrorMessage(error.data.error.message)
+    }
+  }
+
   // render
   useEffect(() => {
     fetchProducts();
@@ -71,7 +93,13 @@ const App = () => {
               handleRemoveFromCart={handleRemoveFromCart}
               handleEmptyCart={handleEmptyCart}
           />}/>
-          <Route exact path="/checkout" element={<Checkout cart={cart} />} />
+          <Route exact path="/checkout" element={
+            <Checkout 
+              cart={cart} 
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              error={errorMessage}/>
+          } />
         </Routes>
     </div>
     </Router>

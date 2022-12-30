@@ -9,7 +9,7 @@ import { commerce } from '../../../library/Commerce';
 
 const steps = ['Shipping Address', 'Payment Details']
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     // traverse thrue steps using usestate
     const [activeStep, setActiveStep] = useState(0);
     const [checkoutToken, setCheckoutToken] = useState(null);
@@ -48,10 +48,10 @@ const Checkout = ({ cart }) => {
         <div> Confirmation </div>
     );
 
-     //pass data to forms by step
+     //pass data to forms
     const Form = () => activeStep === 0
         ? <AddressForm checkoutToken next={next}/>
-        : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken}/> 
+        : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout}/> 
         
     
   return (
