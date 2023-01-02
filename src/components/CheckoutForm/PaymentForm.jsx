@@ -30,9 +30,9 @@ const PaymentForm = ({ checkoutToken, shippingData, backStep, onCaptureCheckout,
         shipping: { 
           name: 'Primary', 
           street: shippingData.address, 
-          city: shippingData.city, 
-          state: shippingData.shippingSubdivision, 
-          postal_code: shippingData.zip,
+          town_city: shippingData.city, 
+          county_state: shippingData.shippingSubdivision, 
+          postal_zip_code: shippingData.zip,
           country: shippingData.shippingCountry
         },
         fulfillment: { shipping_method: shippingData.shippingOption },

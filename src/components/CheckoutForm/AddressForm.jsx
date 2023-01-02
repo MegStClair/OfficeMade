@@ -86,7 +86,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                         <InputLabel>State / Province</InputLabel>
                         <Select value={shippingSubdivision} fullWidth onChange={(e) => setShippingSubdivision(e.target.value)}>
                             {subdivisions.map((subdivision) => (
-                                <MenuItem key={subdivision.id} value={subdivision.label}>{subdivision.label}</MenuItem>
+                                <MenuItem key={subdivision.id} value={subdivision.id}>{subdivision.label}</MenuItem>
                             ))}
                         </Select>
                     </Grid>                    
@@ -94,7 +94,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                         <InputLabel>Shipping Option</InputLabel>
                         <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
                             {options.map((option) => (
-                                <MenuItem key={option.id} value={option.label}>{option.label}</MenuItem>
+                                <MenuItem key={option.id} value={option.id}>{option.label}</MenuItem>
                             ))}
                         </Select>
                     </Grid>

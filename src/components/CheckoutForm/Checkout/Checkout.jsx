@@ -51,11 +51,11 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     let Confirmation = () => order.customer ? (
         <div>
             <Typography variant="h5"> Thank you for your purchase, {order.customer.firstname}</Typography>
-            <Divider classNamme={classes.divider} />
-            <Typography variant="subtitle2"> Order ref: {order.customer_reference}</Typography>
+            <Divider className={classes.divider} />
+            <Typography variant="subtitle2"> Order#: {order.customer_reference}</Typography>
             <br />
             <Button component={Link} to="/" variant="outlined" type="button">Back to Shop</Button>
-        </div>
+        </div> 
     ) : (
         <div className={classes.spinner}>
             <CircularProgress />
@@ -64,9 +64,13 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
     if(error) {
         Confirmation = () => (
-        <>
-        <Typography variant="h5">Error: {error}</Typography>
-        </>
+        <div>
+            <Typography variant="h5"> Thank you for your purchase, {order.customer.firstname}</Typography>
+            <Divider className={classes.divider} />
+            <Typography variant="subtitle2"> Order#: {order.customer_reference}</Typography>
+            <br />
+            <Button component={Link} to="/" variant="outlined" type="button">Back to Shop</Button>
+        </div> 
         );
     }
 
