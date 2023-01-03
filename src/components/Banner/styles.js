@@ -13,9 +13,5 @@ export default makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         color: "#fff",
-        [theme.breakpoints.down("sm")]: {
-          height: 300,
-          fontSize: "3em"
-        }
       }
     }));

@@ -15,10 +15,9 @@ function Banner() {
         <Box><Typography variant="h5">Build your dream workspace, so you can get your best work done.</Typography></Box>
       </Box>
     </div>
-    
   );
 }
     
 
 
-export default Banner
+export default Banner;
