@@ -8,7 +8,7 @@ import CartItem from './CartItem/CartItem';
 const Cart = ({ cart, handleCartQty, handleRemoveFromCart, handleEmptyCart }) => {
     const classes = useStyles();
 
-       // display different content if cart is empty or not
+    // display different content if cart is empty or not
 
     // if cart is empty, render EmptyCart 
     const EmptyCart = () => (
