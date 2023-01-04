@@ -5,6 +5,8 @@ A fully functional e-commerce site with products page, shopping cart, and paymen
 ##### Live Site:  https://officemade-ecommerce.netlify.app
 ##### Demo card#: 4000 0035 6000 0008
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/110854972/210650074-de3c561b-ac3b-4b0d-a3b6-e757eeaaf69e.gif)
+
 ## Features
 - Material UI integration for user interface
 - Stripe API utlization for card transactions and payment processing
@@ -18,6 +20,7 @@ A fully functional e-commerce site with products page, shopping cart, and paymen
 - Stripe API
 - Commerce.js
 
+![OfficeMade-Checkout-1](https://user-images.githubusercontent.com/110854972/210648139-0e8c2e34-2b87-4454-b9d9-f4b10fd38ff4.gif)
 <br><br><br>
 ## Getting Started with Create React App
 
