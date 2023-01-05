@@ -1,6 +1,6 @@
 
 # OfficeMade
-A fully functional e-commerce site with products page, shopping cart, and payment options. 
+A fully functional ecommerce site with products page, shopping cart, and payment options. 
 
 ##### Live Site:  https://officemade-ecommerce.netlify.app
 ##### Demo card#: 4000 0035 6000 0008
