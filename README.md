@@ -3,7 +3,8 @@
 A fully functional ecommerce site with products page, shopping cart, and payment options. 
 
 ##### Live Site:  https://officemade-ecommerce.netlify.app
-##### Demo card#: 4000 0035 6000 0008
+##### Demo card#: 4000 0035 6000 0008 
+<br>
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/110854972/210650074-de3c561b-ac3b-4b0d-a3b6-e757eeaaf69e.gif)
 
